@@ -628,6 +628,7 @@ void DepositTableWidget::onExportReport() {
         out << QString("  Ставка:     %1%\n").arg(r.ratePercent, 0, 'f', 2);
         out << QString("  Нач. сумма: %1 руб.\n").arg(r.startSum, 0, 'f', 2);
         out << QString("  Кон. сумма: %1 руб.\n").arg(r.endSum, 0, 'f', 2);
+        out << QString("  Накоплено: %1 руб.\n").arg(calculateAccrued(r), 0, 'f', 2);
         out << QString("  Статус:     %1\n").arg(isOverdue ? "ПРОСРОЧЕН" : "активен");
         out << "\n";
     }
