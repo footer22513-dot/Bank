@@ -383,3 +383,9 @@ void MainWindow::onDepositUpdated(const DepositRecord& rec) {
     }
     saveFile(currentFile);
 }
+
+#include <QCloseEvent>
+void MainWindow::closeEvent(QCloseEvent *event) {
+    saveFile(currentFile);  // Сохраняем в текущий файл при закрытии
+    event->accept();
+}
